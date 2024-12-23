@@ -44,9 +44,9 @@ function FileUpload() {
 
     const averageSentiments = {
         compound: sentimentData.reduce((acc, item) => acc + item.compound, 0) / sentimentData.length,
-        neg: sentimentData.reduce((acc, item) => acc + item.neg, 0) / sentimentData.length,
-        neu: sentimentData.reduce((acc, item) => acc + item.neu, 0) / sentimentData.length,
-        pos: sentimentData.reduce((acc, item) => acc + item.pos, 0) / sentimentData.length,
+        negative: sentimentData.reduce((acc, item) => acc + item.neg, 0) / sentimentData.length,
+        neutral: sentimentData.reduce((acc, item) => acc + item.neu, 0) / sentimentData.length,
+        positive: sentimentData.reduce((acc, item) => acc + item.pos, 0) / sentimentData.length,
     };
 
     const sentimentDistribution = [
@@ -85,7 +85,7 @@ function FileUpload() {
                                     fill="#8884d8"
                                 >
                                     {sentimentDistribution.map((entry, index) => (
-                                        <Cell key={`cell-${index}`} fill={entry.name === 'Positive' ? "#00ff00" : entry.name === 'Neutral' ? "#00aaff" : "#ff0000"} />
+                                        <Cell key={`cell-${index}`} fill={entry.name === 'Positive' ? "#0075A4" : entry.name === 'Neutral' ? "#72ADCF" : "#BFE8FF"} />
                                     ))}
                                 </Pie>
                                 <Tooltip />
@@ -112,10 +112,10 @@ function FileUpload() {
                                 <YAxis />
                                 <Tooltip />
                                 <Legend />
-                                <Bar dataKey="compound" fill="#8884d8" />
-                                <Bar dataKey="neg" fill="#ff0000" />
-                                <Bar dataKey="neu" fill="#00ff00" />
-                                <Bar dataKey="pos" fill="#0000ff" />
+                                <Bar dataKey="compound" fill="#FF8DA1" />
+                                <Bar dataKey="negative" fill="#FFA896" />
+                                <Bar dataKey="neutral" fill="#88BDF2" />
+                                <Bar dataKey="positive" fill="#68BA7F" />
                             </BarChart>
                         </div>
                     </>
